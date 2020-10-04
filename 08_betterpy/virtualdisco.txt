@@ -1,0 +1,27 @@
+Team Tissue (Maddy Andersen, Liam Kronman, Amelia Chin)
+SoftDev
+K08 -- Cross Pollination and Virtual Insanity, Task Beta: investigating $ python3 -m venv ~/myherozero
+2020-10-04
+
+python3 : opens a python shell
+-m : lets you run modules 
+venv : module that creates a virtual environment 
+~/myherozero : location of new virtual environment that is being created
+
+A virtual environment allows the user to use python with different packages. In a virtual environment, everything that you
+download and create is isolated from and does not alter your system's python. This is helpful when one project requires a 
+different set of packages than the ones you have in your system's or a different virtual environment's python. You can download 
+packages directly to the virtual environment where you need them, instead of downloading them globally to your system's python.
+
+"$ python3 -m venv ~/myherozero" creates a new directory called "myherozero" and stores a virtual environment inside of it. Within
+"myherozero" there are three directories called "bin," "include," and "lib" as well as "pyvenv.cfg." "bin" contains executable 
+commands and "lib" is the version of python that you are running. We're not sure what "include" is, but we think that it's all of 
+the external things that you import into this virtual environment ("include" is currently empty). "pyvenv.cfg" configures/sets up 
+the virtual environment.
+
+sources: 
+- We ran the command in our terminal
+- python docs (https://docs.python.org/3/library/venv.html)
+- http://pythonwise.blogspot.com/2015/01/python-m.html
+- https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#:~:text=virtualenv%20is%20used%20to%20manage,system%20tools%20or%20other%20projects
+- https://macpaw.com/how-to/access-bin-folder-mac

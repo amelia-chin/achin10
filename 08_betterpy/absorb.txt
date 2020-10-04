@@ -1,0 +1,31 @@
+Team Tissue (Maddy Andersen, Liam Kronman, Amelia Chin)
+SoftDev
+K08 -- Cross Pollination and Virtual Insanity, Task Alpha: Q/C/C from K07
+2020-10-04
+
+Questions:
+- for random.choices: weights vs cum_weights?
+- why is closing the file necessary? is it really necessary?
+- general confusion about "if __name__ == "__main__":"
+- what does "with open(csv, 'r') as in_stream:" do?
+
+Comments:
+- used random.choices with percentages being the weights
+- lots of teams casts the dictionary into a list
+- big block comment at the top and general commenting throughout helps us understand code better
+- some people used "import random" and others used "from random import choices"
+- removed "Job Class" and "Total" keys with .pop
+- can initialize a variable to a for loop and you can embed some for loops into brackets and it turns into a list (ex: weights = [float(x) for x in list(Dict.values())])
+- some people closed the file
+- didn't know you could do "del jobs[0]"
+- noticed a variety of ways to generate a random number 
+- imported csv, used DictReader to make a dictionary
+- used random.uniform to get a random decimal 
+- some people made a main function and called it at the end
+
+Concerns:
+- some print statements were really long, could be better to make into a variable then print
+- ways to make block comments instead of putting a # before each line
+- some people had their total percentage out of 100 instead of 99.8
+- main function doesn't seem to be necessary 
+
