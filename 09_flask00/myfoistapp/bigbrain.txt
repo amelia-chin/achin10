@@ -1,0 +1,24 @@
+Team Tissue (Maddy Andersen, Liam Kronman, Amelia Chin)
+SoftDev
+K09 -- Simple Path to Greatness (exploring and running our first flask app)
+2020-10-07
+
+Q0: we've seen this syntax in Java when initializing an object. It's taking app.py as a parameter 
+and creating a Flask object called app. 
+
+Q1: All directories end in '/'
+
+Q2: We think it will print out to the terminal.
+
+Q3: It will print the name of the file, "app"
+	update: "__main__" is printed after we open the http link in our browser
+
+Q3.5: No, because when things are returned, they aren't printed.
+	  update: once we opened the http link given by the terminal in our web browser, it displayed "No hablo
+	  queso!" on a white screen.
+
+Q4: It's like calling an object.function() in Java. 
+
+Notable questions:
+- why "lazy loading"? what does that mean?
+- why is ""GET / HTTP/1.1" 200 -" printed? what does that mean?
