@@ -1,0 +1,43 @@
+Team Tissue (Maddy Andersen, Liam Kronman, Amelia Chin)
+SoftDev
+K11 - Some Things Never Change (experimenting with using flask to serve static files and making our own)
+2020-10-13
+
+Observations about app.py:
+- exactly the same as v4 app.py
+- notes from our K10 assignment:
+	Observations and Expected Outcomes:
+	- expected output as follows:
+    	- prints "about to print __name__..." in the terminal 
+   	 	- prints __name__, which will be "__main__" in the terminal on a new line
+   		- both will be printed once we open the local webpage
+    	- a local webpage with "No hablo queso!" written in the top left corner
+    	- if the file is not imported, meaning __name__ is "__main__" which we think is true:
+        	- debug mode in the terminal will be turned on
+       		- it will also run
+    	- if the file is imported, meaning __name__ is not "__main__":
+        	- debug mode will not turn on and the app will not run
+    	- terminal will tell us that the "Debugger is active!" along with its Debugger PIN
+    	- every time we make an edit to the file, it will tell us that it detected a change in our file and will reload
+    	- every time it reloads, it will give us the same active message and PIN
+    
+	- tested output met all of our expectations
+	- not sure what would happen if the file was imported, because we're not sure how to test that
+
+
+Observations about foo:
+- expected possible outcomes:
+	- option 1: open a local webpage with the text "this here some plaintext tho"
+	- option 2: downloads foo file
+- tested output: option 2: downloads foo file, but doesn't open the file
+- terminal says: "GET /static/foo HTTP/1.1" 200 - 
+- note: we tested this in chrome
+
+
+Observations about foo.html:
+- expected outcome:
+	- this will open a local web page displaying "this here some plaintext tho"
+- tested output:
+	- displayed text in a fixed-width font, making it look like a plaintext file
+- terminal says: '"GET /static/foo.html HTTP/1.1" 200 -' in white font the first time you open the web page
+- with every reload after, terminal says: '"GET /static/foo.html HTTP/1.1" 304 -' in blue font
