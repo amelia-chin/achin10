@@ -3,7 +3,7 @@ SoftDev
 K11 - Some Things Never Change (experimenting with using flask to serve static files and making our own)
 2020-10-13
 
-Observations about app.py:
+Observations about app.py: 
 - exactly the same as v4 app.py
 - notes from our K10 assignment:
 	Observations and Expected Outcomes:
