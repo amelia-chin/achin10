@@ -1,0 +1,44 @@
+Team Tissue (Maddy Andersen, Liam Kronman, Amelia Chin)
+SoftDev
+K12 - ...or The Only Constant is Change? (experimenting with Flask and introducing Jinja2 to serve templated pages)
+2020-10-13
+
+Observations about app.py:
+
+Q0: What happens if you remove render_template from this line?
+- we won't be able to use the "render_template" function, because the file will not be able to access the Jinja2 formatting template
+- edit: we tried removing "render_template" and got a NameError
+
+Q1: Can all of your teammates confidently predict the URL to use to load this page?
+- we think the URL will be "http://localhost:5000/my_foist_template"
+- however, we are only 1/3 fully confident (liam is very confident, amelia and maddy are moderately confident)
+
+Q2: What is the significance of each argument?
+- first argument: name of file with Jinja2 template and html formatting, in this case "model_tmplt.html"
+- second arugment: website's title or what's written on the tab, in this case "fooooo", will be used in the template where it says "{{ foo }}" 
+- third arugment: "coll" will be used in the template where it says "collection", this is the list that will be iterated through 
+
+
+Observations about model_tmplt.html:
+- we notice this file is made up of a combination of Jinja2 and html syntax
+- contents of the body are the Jinja2 syntax for a for loop
+- we think that double curly braces indicate a variable
+- we think that one curly brace and a percent sign indicate a function
+
+
+Expected Outcome:
+- if the URL you enter is "http://localhost:5000":
+	- a local web page with "No hablo queso!" displayed on it
+- if the URL you enter is "http://localhost:5000/my_foist_template":
+	- webpage title will be "fooooo"
+	- will display all the elements in "coll" on different lines (0, 1, 1, 2, 3, 5, 8) <-- fibonacci sequence
+
+
+Tested Output:
+- for both cases, the tested output matched our expectations
+
+
+General Questions: 
+- why do we use "foo"? why not anything else?
+	edit: we looked it up and it comes from the term "foobar"
+	edit2: why "foobar"? where did this term come from?
