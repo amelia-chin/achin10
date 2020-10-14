@@ -3,7 +3,7 @@ SoftDev
 K12 - ...or The Only Constant is Change? (experimenting with Flask and introducing Jinja2 to serve templated pages)
 2020-10-13
 
-Observations about app.py:
+Observations about app.py: 
 
 Q0: What happens if you remove render_template from this line?
 - we won't be able to use the "render_template" function, because the file will not be able to access the Jinja2 formatting template
