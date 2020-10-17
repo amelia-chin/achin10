@@ -1,0 +1,13 @@
+Team Antemeridian (Amelia Chin, May Hathaway, Madelyn Mao)
+SoftDev
+K13 -- Template for Success
+Summary: Wrote a flask app to generate a table showing the occupations data and a randomly selected occupation. We read egoless programming.
+2020-10-15
+
+We used a mixture of k10 and 02_flask-jinja to write app.py.
+Making a table with 3 rows is harder than making a table with two rows.
+Also, making a dictionary with multiple values is complicated. The types get confusing.
+
+From the text, we learned to be respectful when discussing other people's code and to also be open minded when hearing constructive criticism.
+
+It took longer than expected to find acceptable links for jobs.

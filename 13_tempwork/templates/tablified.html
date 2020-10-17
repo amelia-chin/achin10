@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+Team Antemeridian (Amelia Chin, May Hathaway, Madelyn Mao)
+SoftDev
+K13 -- Template for Success
+Summary: Wrote a flask app to generate a table showing the occupations data and a randomly selected occupation. We read egoless programming.
+2020-10-15
+-->
+
+<html>
+
+  <head>
+    <style>
+      td{
+        border: 1px solid;
+        text-align: left;
+        padding: 8px;
+        }
+    </style>
+    <title> {{ title }} </title>
+  </head>
+
+  <body>
+    <h1>Welcome! Here is a random occupation! <br></h1>
+    <h2>Team Antemeridian: Amelia Chin, May Hathaway, Madelyn Mao</h2>
+
+    <h2>{{collection}}</h2>
+    <br>
+    <table>
+      <tr>
+        <td>Job Class</td>
+        <td>Percentage</td>
+        <td>Links</td>
+      </tr>
+      {% for key in occupationsList %}
+      <tr>
+        <td>{{ key }}</td>
+        <td>{{ occupationsList[key][0]}}</td>
+        <td><a href={{ occupationsList[key][1]}}>{{ occupationsList[key][1]}}</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+
+</html>
