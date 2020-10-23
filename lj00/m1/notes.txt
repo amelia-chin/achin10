@@ -1,0 +1,25 @@
+Team Antemeridian (Amelia Chin, May Hathaway, Madelyn Mao)
+SoftDev
+LJ00 -- Le Voyage de Learnination avec Mongo, Première Phase
+Summary: notes from chapter 1 of MongoDB course
+2020-10-23
+
+What is mongoDB database?
+
+Database: structured way to store and access data
+NoSQL: any datastore that doesn’t use legacy approach of related tables of data
+You store data not in rows/columns. Can be anything from library card catalog, to mongoDB
+MongoDB is a NoSql documentDB, data in Mongo DB is stored as documents. 
+The documents are stored in collections of documents.
+
+What is a Document?
+Document: a way to organize and store data as a set of field-value pairs
+Field - a unique identifier for a datapoint.
+Value - data related to a given identifier.
+A collection is an organized store of documents in MongoDB, usually with common fields between documents
+
+What is MongoDB atlas? V3
+Atlas is a database, with mongoDB at its core. mongoDB is used at the core of atlas for data storage and retrieval
+Cluster - group of servers that store your data.
+Replica Set - a few connected machines that store the same data to ensure that if something happens to one of the machines the data will remain intact. Comes from the word replicate - to copy something.
+Instance - a single machine locally or in the cloud, running a certain software, in our case it is the MongoDB database.
