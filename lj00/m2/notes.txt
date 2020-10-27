@@ -1,0 +1,74 @@
+Team Antemeridian (Amelia Chin, May Hathaway, Madelyn Mao)
+SoftDev
+LJ00 -- Le Voyage de Learnination avec Mongo, Première Phase
+Summary: notes from chapter 2 of MongoDB course
+2020-10-27
+
+Chapter 2: Importing, Exporting, and Querying Data
+
+- JSON: JavaScript Standard Object Notation
+- JSON format 
+	- document starts and ends with curly braces {}
+	- each key and value are separated with a colon :
+	- each key:value pair is separated by a comma , 
+	- "keys" have to be surrounded by quotation marks " " (in MongoDB, "keys" are called "fields")
+
+- JSON pros: user-friendly, readable, and familiar
+- JSON cons: text-based format that makes parsing very slow, space-consuming, only supports a limited number of data types
+
+- BSON: Binary JSON, a binary representation to store data in JSON format
+- built for speed, space, flexibility, high-performance, and general focus
+
+- JSON:
+	- encoding: UTF-8 String
+	- data supported: String, Boolean, Number, Array
+	- readability: human and machine 
+- BSON:
+	- encoding: binary
+	- data supported: String, Boolean, Number (Integer, Long, Float, etc), Date, Raw Binary
+	- readability: machine only
+	- additional data types allow for better communication b/w databases and applications written in a variety of languages
+
+- MongoDB stores data in BSON internally and over the network 
+- anything represented in JSON can be stored in and retrieved from MongoDB
+- BSON provides additional features (speed, flexibility, etc)
+
+- backup to cloud locally or export to different system --> use BSON
+- export to local machine --> use JSON
+
+- export data in BSON:
+	- mongodump --uri "<Atlas Cluster URI>"
+- export data in JSON:
+	- mongoexport --uri "<Atlas Cluster URI>"
+	              --collection=<collection name>
+	              --out=<filename>.json
+
+- URI: Uniform Resource Identifier 
+- MongoDB uses a srv string to establish a secure connection between an application and a MongoDB instance 
+- URI connection string format: mongodb+srv://user:password@clusterURI.mongodb.net/database
+
+- import data in BSON dump:
+	- mongorestore --uri "<Atlas cluster URI>"
+				   -- drop dump
+- import data in JSON:
+	- mongoimport --uri "<Atlas Cluster URI>"
+				  --drop=<filename>.json
+
+- namespace: the concatenation of the database name and collection name
+- queries have to use valid JSON 
+- returned documents will have the requested field:value pairs in them
+
+- shell commands:
+	- show dbs 
+	- use <database name>
+	- show collections
+	- db.<collection name>.find(<query>)
+	- it (stands for iterate) used to iterate through a cursor 
+		- cursor: a pointer to a result set of a query
+		- pointer: direct address to a memory location
+	- db.<collection name>.find(<query>).count() returns the number of documents that match the given query
+	- db.<collection name>.find(<query>).pretty() returns the documents that match the given query formatted for ease of reading
+	- db.<collection name>.find() returns the first 20 documents of the collection
+
+
+
