@@ -1,0 +1,83 @@
+Team Apple Tree (Andrew Jiang, Victoria Gao, Amelia Chin)
+SoftDev
+LJ01 -- Le Voyage de Learnination avec Mongo, Deuxième Phase/notes from chapter 3 of the mongoDB course
+2020-11-02
+
+
+- Every document must have a  _id field and a unique _id value.
+- Other than the _id field, documents do not need unique values for other fields.
+
+- Documents don't need to have field names in common, but collections with documents that have different field names are disorganized.
+
+- Through the user interface, click on a MongoDB collection and then the "Insert Document" button to the top right corner of the screen. 
+A document can be edited with JSON notation by clicking curly brackets in the view menu or you can edit one field-value pair at a time using default view (3 bullet points and 3 lines icon).
+
+- When a new document is inserted, the default value for the _id field is of type ObjectId().
+
+- To move from a field to a value section or from a value to a field section of a document, press "tab" button or use your mouse.
+
+- Field names must be strings, but its value can be a String, integer, date, or document.
+Type a value and change its type by clicking on the gray box on the same line as the field-value pair and selecting a data type.  
+
+- We can verify that a document was inserted successfully by issuing a find query in the shell or user interface.
+
+- When a "duplicate key error" is printed in the shell, the user attempts to insert a document with an _id value that already exists in the collection.  One way to solve this problem is to add "--drop" to a mongoimport command to remove 
+the whole collection before inserting it back.
+- A "duplicate key error" can also tell us the number of documents inserted after we used the insert command.
+If "writeError" is printed, we learn that our document wasn't inserted because we can't insert documents with 
+identical _id values into the collection.
+- A "duplicate key error" isn't printed when we insert the same set of documents because we didn't specify the _id values for any of the inserted documents.  Each of the inserted documents have their own unique _id value.
+
+.findOne() finds a random document that matches the query and gives you a general idea of the shape of documents in a collection.  You don't know if the document returned is the only document that matches the query.
+
+- Another way to insert documents is to use the insert command: db.<collection>.insert(<document>)
+- Use up arrow key to get the most recently used command.
+
+- We don't need to add _id field when inserting a document.  The _id field can be generated for an inserted document before its insertion.
+
+- To insert multiple documents with one insert command, place the documents in an array by surrounding them with 
+square brackets.  When many documents are inserted with one insert command, the default behavior is to insert them in the order
+in which they are listed in the array.  
+- If we set the "ordered" option to "false" in the insert command, only documents with unique _id values will be 
+inserted and documents with duplicate _id values will produce their own errors.
+- When the default ordered insert happens, the moment there is a duplicate key error, the insert operation holds
+and even if the rest of the documents have unique ids, they won't be inserted.
+
+- If you insert a document into a collection that doesn't exist, then the non-existent collection will be created.
+
+- If you type "use <non-existent collection>" and then you insert a document, a new collection will be created.  
+If you don't insert a document after typing "use <non-existent collection>", a new collection won't be created.
+
+- A field's corresponding value can be an array of documents.
+- To update a document through the user interface, hover over the document and click the pencil icon at the top right corner.
+- When editing a document that contains an array field with sub-documents, we can choose where to nest a new object that we want to add.  We can add a new element to the array or create a new field-value pair below the array field.
+- Click the "Update" button at the bottom right of the screen to save the document after editing.  
+
+- If there are multiple documents that match a query and the .updateOne() command is used, whichever document that the operation finds first will be updated.
+
+.updateMany() will update all documents that match the query.
+The first argument of .updateMany() specifies the query that will determine which documents will be updated.
+The second argument is the update operator, which is how a document's values will be changed.
+
+- An example of an update operator is "$inc", which increments the value of a specified field by the given amount.
+Ex: {"$inc":{"pop":10}} increases the value corresponding to each document's pop field by 10.
+"matchedCount": number of documents that matched the query
+"modifiedCount": number of documents updated.
+
+- We can update multiple fields at the same time with the "$inc" operator by listing the fields and their increment value separated inside a set of curly brackets and separated from other sets of brackets with a comma.
+
+- Another update operator is "$set", which updates the value of a given field with a specified value.
+
+- If the field that is specified with an update operator doesn't exist, the field gets added to the document.
+
+- To add an element to an array field, use the "$push" update operator.
+{"$push:{<array_name>:{<field>:<value>}}}
+
+- On the user interface, a database, collection, and document can be deleted by clicking the garbage can icon.
+
+.deleteOne() should be used to delete documents when we query by _id value to guarantee that there is only one document that matches the query.
+
+.deleteMany() deletes all the documents that match the query.
+
+- To delete a collection, use "--drop" at the end of a command that imports a collection so we don't get a duplicate key error. We can also drop from the mongo shell with db.<collection name>.drop()
+
