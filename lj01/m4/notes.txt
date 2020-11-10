@@ -1,0 +1,98 @@
+Team Apple Tree (Andrew Jiang, Victoria Gao, Amelia Chin)
+SoftDev
+LJ01 -- Le Voyage de Learnination avec Mongo, Deuxième Phase/notes from chapter 4 of the mongoDB course
+2020-11-10
+
+- update operators
+	- enable us to modify data in the database
+	- ex: $inc, $set, $unset
+
+- query operators 
+	- provide additional ways to locate data within the database
+
+- uses of $
+	- precedes MQL operators
+	- precedes Aggregation pipeline stages
+	- allows access to field values
+
+- comparison 
+	- allow us to find data within a certain range
+	- $eq (equal to)
+	- $neq (not equal to)
+	- $gt (greater than)
+	- $lt (less than)
+	- $gte (greater than or equal to)
+	- $lte (less than or equal to)
+
+- { <field>: { <operator>: <value> } }
+
+- logic operators
+	- allow us to be more specific in data searching
+	- $and (match all the specified query clauses)
+	- $or (match at least one of the query clauses)
+	- $nor (don't match both clauses)
+	- $not (negates query requirement)
+
+- for $and, $or, $nor :
+	- {<operator> : [{statement1}, {statement2}, ...]}
+
+- for $not :
+	- {$not: {statement}}
+
+- implicit $and : the default operator when an operator is not specified
+- explicit $and : when you need to include the same operator more than once in a query
+
+- expressive query operator $expr 
+	- allows for more complex queries and for comparing fields within a document
+	- allows the use of aggregation expressions within the query language
+	- { $expr: { <expression> } }
+	- allows us to use variables and conditional statements
+
+- uses of $
+	- denotes the use of an operator
+	- addresses the field value
+
+- ex: {"$expr": {"$eq": ["$start station id", "$end station id"]}}
+
+- MQL syntax: { <field>: { <operator>: <value> } }
+- aggregation syntax: { <operator>: { <field>, <value> } }
+
+- $push: add an element to an array or turn a field into an array field if it wasn't one before
+
+- {<array field> : { "$size": <number> }} returns a cursor with all documents where the specified array field is exactly the given length
+- {<array field> : { "$all": <array> }} returns a cursor with all documents in which the specified array field contains all the given elements regardless of their order in the array
+
+- querying an array field with an array returns only exact array matches
+- querying an array field with a single element returns all documents where the specified array field contains the given element
+
+- projection
+	- db.<collection>.find({ <query> }, { <projection> })
+	- 1 : include the field
+	- 0 : exclude the field
+	- use only 0s or only 1s
+	- db.<collection>.find({ <query> }, { <field1>: 1, <field2>: 1 })
+	- db.<collection>.find({ <query> }, { <field1>: 0, <field2>: 0 })
+	- exception when you are specifically looking to exclude the _id field so {db.<collection>.find({ <query> }, { <field1>: 1, "_id": 0 })}
+
+- $elemMatch
+	- {<field> : { "$elemMatch": { <field>: <value> }}}
+	- matches documents that contain an array field with at least one element that matches the specified query criteria
+	OR 
+	matches only the array elements with at least one element that matches the specified criteria
+
+- ex: db.companies.find({ "relationships.0.person.last_name": "Zuckerberg" },{ "name": 1 }).pretty()
+	- 0: position of first array element
+	- person: field name with a nested object as a value
+	- last_name: field name within the "person" sub-document
+	- "Zuckerberg": value we are looking for
+
+- MQL uses dot notation to specify the address of nested elements in a document
+- to use dot notation in arrays specify the position of the elements in the array
+- db.collection.find({"field 1.other field. also a field": "value"})
+
+
+
+
+
+
+
