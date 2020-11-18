@@ -1,0 +1,52 @@
+Team Antemeridian (Amelia Chin, May Hathaway, Madelyn Mao)
+SoftDev
+LJ02 -- Le Voyage de Learnination avec Mongo, Troisième Phase
+Summary: notes from chapter 5 of MongoDB course
+2020-11-18
+
+Aggregation Framework
+- aggregation framework: another way to query data in MongoDB
+- each action in the pipeline is executed in the order in which it is listed
+- computes, reshapes, and reorganizes data
+- data in the pipeline exists within the pipeline, doesn't change original data
+- db.listingsAndReviews.aggregate([ 
+	{ "$match": { "amenities": "Wifi"} },
+	{ "$project": { "price": 1, "address": 1, "_id": 0 }} ]). pretty()
+- $group: an operator that takes the incoming stream of data, and siphons it into multiple distinct reservoirs
+- { $ group: 
+	{ _id: <expression>, // group by expression
+	<field>: { <accumulator1> : <expression1> }, ... } }
+
+limit() and sort()
+- cursor methods are not applied to the data in the database, but to the result set that lives in the cursor
+- db.zips.find().sort({ "pop": 1, "city": -1 })
+	- pop is increasing: 0 --> infinity
+	- city is decreasing: Z --> A
+- using limit() without sort() will probably get results without order
+- limit() before sort(): might miss data you meant to sort
+- MongoDB assumes that when you use cursor.limit().sort(), you mean cursor.sort().limit()
+
+Indexes
+- indexes make queries even more efficient
+- index: a special data structure that stores a small portion of the collection's data set in an easy to traverse form
+- single field index ex: db.trips.createIndex({"birth year": 1})
+- compound index ex: db.trips.createIndex({"start station id": 1, "birth year": 1})
+
+Data Modeling
+- data modeling: a way to organize fields in a document to support your application performance and querying capabilities
+- data is stored in the way that it is used
+- data that is used together should be stored together
+- evolving applications --> evolving data model
+
+Upsert
+- everything in MQL used to locate a document in a collection can also be used to modify the document
+- db.collection.updateOne({<query to locate>}, {<update>})
+- upsert is a hybrid of update and insert,
+- db.collection.updateOne({<query>}, {<update>}, {"upsert": true})
+- upsert default set to false
+- if upsert is true,
+	- if there's a match, will update the matched document
+	- if no match, will insert a new document
+- upsert : true (conditional updates)
+- upsert : false (update an existing document, insert a brand new document)
+
