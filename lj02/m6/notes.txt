@@ -1,0 +1,46 @@
+Team Antemeridian (Amelia Chin, May Hathaway, Madelyn Mao)
+SoftDev
+LJ02 -- Le Voyage de Learnination avec Mongo, Troisième Phase
+Summary: notes from chapter 6 of MongoDB course
+2020-11-24
+
+Data Explorer Features:
+- Indexes tab 
+	- view what indexes in collection
+	- create/drop indexes
+	- performance advisor for database
+- Schema Anti-Patterns tab
+	- provides advice about data model once enough queries have been issued against the collection
+- Aggregation tab
+	- build aggregation pipelines in UI
+	- see how data is transformed from one stage of the pipeline to another
+	- export pipeline code to language
+- Search Indexes tab
+	- Atlas Search enables advanced search functionality
+
+Atlas Products and Options:
+- Organization Access Manager allows grouping of projects, teams, and billing at the highest level
+	- Projects allows users to group people by team 
+- Realm offers services that allow developers to build web or mobile applications or just integrate MongoDB Atlas data into an application
+- Charts allows the creation of dynamic data visualizations 
+
+Compass:
+- GUI for MongoDB, allows you to explore and manipulate MongoDB data
+- don't touch the admin, config, and local databases
+- Documents tab
+	- shows documents in collection
+	- has ability to filter data and change the format of how we view data
+	- can import queries to language
+- Aggregation tab
+	- works the same way it does in Data Explorer 
+- Schema tab
+	- takes a sample of 1,000 documents and analyzes their schema to provide a high level overview of the shape of the documents
+- Index tab
+	- create new indexes
+- Explain Plan tab
+	- explains how the requested data was found and retrieved from the database
+	- helps understand and improve the performance of your queries
+- Validation tab
+	- allows you to specify what is allowed or not allowed to be written to your database
+
+
