@@ -1,0 +1,25 @@
+Team E and F (Karl Hernandez, Eric Lo, Amelia Chin, Ari Schechter)
+SoftDev
+K14 — Form and Function / write a Flask app to echo a site visitor their input via an HTML form
+2020-12-08
+
+Expected Outputs: 
+print(app): prints name of app
+print(request): prints query, nothing usually 
+print(request.args): prints arguments relating to query
+print(request.args['username']): prints out username in query, if there
+print(request.headers): prints out metadata
+
+Tested Outputs: 
+on landing page: 
+	print(app): <Flask 'app'>
+	print(request): <Request 'http://localhost:5000/' [GET]> 
+	print(request.args): ImmutableMultiDict([])
+	print(request.args['username']): no username yet
+	print(request.headers): prints out info like Host, Connection, Cache-Control, User-Agent etc
+on response page:
+	print(app): <Flask 'app'>
+	print(request): <Request 'http://localhost:5000/auth?username=<username>&sub1=Submit' [GET]>
+	print(request.args): ImmutableMultiDict([('username', '<username>'), ('sub1', 'Submit')])
+	print(request.args['username']): prints username inputed, same as <username> in above print statements
+	print(request.headers): prints out info like Host, Connection, Cache-Control, User-Agent, etc
