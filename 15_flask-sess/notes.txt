@@ -1,0 +1,17 @@
+Team E and F (Karl Hernandez, Eric Lo, Amelia Chin, Ari Schechter)
+SoftDev
+K15 — Sessions Greetings / write a Flask app that uses session capabilities to allow a user to login and logout
+2020-12-12
+
+- We used the POST method to get the username and password from the form to our flask app
+- then, we checked the inputted username and password with our hardcoded ones
+- if they matched, we added the data to the session and routed the user to welcome.html
+- if they didn't, we displayed an appropriate error message using one template, error.html
+- we also added a route for logging out, which removes the inputted data from the session and redirects you to the login page
+- we used buttons to redirect to login page
+
+something we want to know how to do in the future:
+- how to reroute to an existing page rather than just redirecting
+	- ex: when logging out, we wanted to reroute to the root route, but instead had to render login.html
+- how to use cookies? what's the difference between request.cookies.get(key) and request.form[key]? 
+	- we tried to use cookies at first, but it gave us an error 
