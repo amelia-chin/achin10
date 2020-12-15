@@ -1,0 +1,36 @@
+Team E and F (Karl Hernandez, Eric Lo, Amelia Chin, Ari Schechter)
+SoftDev
+K16 — No Trouble / write a simple Python script to import CSV data into a relational database
+2020-12-14
+
+-DictReader is a method from csv that creates an iterable dictionary that
+ creates keys out of the first line of the csv file automatically. When you
+ iterate through the DictReader object, each line is stored in the variable
+ used to iterate through the for loop as a dictionary. The entries in the line
+ can be accessed by calling the variable with the corresponding key. The values
+ in this variable dictionary are not remembered once the loop goes to the next
+ line, so the values must be stored in another dictionary.
+
+-Is there an easier/more concise way to parse multiple csv files without
+ copy pasting all the DictReader code?
+
+-Need to delete the db file contents created in between test runs
+    -We used os.remove("./<db name>") to import something
+     for a single line to automatically delete the db file.
+
+-command += "<command>" is a readable way to chain multiple commands together
+
+-.format() to pass variables into the string command
+
+-.execute() can only take in one command at a time
+
+-We want to use .executescript() to take in multiple commands because
+ pasting .execute a lot of times is annoying and less readable.
+
+-When you open the sqlite db file, it is unreadable because it's in binary.
+ for row in c.execute('SELECT * FROM courses;'):
+    print(row)
+ -This is how we viewed the contents of our table to see if our code worked
+
+-For TEXT types and .format, you need to put "" around the {} or else you get 
+ an error
