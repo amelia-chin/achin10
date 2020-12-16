@@ -9,8 +9,8 @@ import sqlite3  # enable control of an sqlite database
 
 # ==========================================================
 # The following two lines were to make sure the old data
-import os
-os.remove("./discobandit.db")
+# import os
+# os.remove("./discobandit.db")
 # ==========================================================
 DB_FILE = "discobandit.db"
 
@@ -84,10 +84,10 @@ for i in range(len(students["id"])):
 c.executescript(command)    # run SQL statement
 # ==========================================================
 # To test we actually added the data correctly
-for row in c.execute("SELECT * FROM courses"):
-   print(row)
-for row in c.execute("SELECT * FROM students"):
-   print(row)
+# for row in c.execute("SELECT * FROM courses"):
+#   print(row)
+# for row in c.execute("SELECT * FROM students"):
+#   print(row)
 # ==========================================================
 
 db.commit()  # save changes
