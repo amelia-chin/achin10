@@ -1,0 +1,6 @@
+Team SOAC (Stella Oh, Amelia Chin)
+SoftDev pd1
+K18: Filler and Finery
+2021-01-12
+
+Refreshed our memories about float, padding, and margin.

@@ -1,0 +1,56 @@
+/* 
+Team SOAC (Stella Oh, Amelia Chin)
+SoftDev pd1
+K18: Filler and Finery // external CSS
+2021-01-12
+*/
+
+body {
+	background-color: #808080; 
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	text-align: center; 
+	color: white; 
+	background-color: #d9d9d9; 
+	margin: 0px;
+}
+
+h3 {
+	margin-left: 5px;
+}
+
+ul {
+	list-style-type: none; 
+	padding-left: 0px; 
+	margin-left: 5px;
+}
+
+a {
+	text-decoration: none; 
+	color: white;
+}
+
+.main {
+	background-color: #999999;
+}
+
+.list {
+	text-align: justify; 
+	float: left; 
+	margin-left: 10px;
+}
+
+.text {
+	margin-left: 200px;
+}
+
+.copyright {
+	background-color: #595959; 
+	color: #a6a6a6; 
+	text-align: right; 
+	padding-top: 10px; 
+	padding-bottom: 10px;
+	margin: 0px;
+}
