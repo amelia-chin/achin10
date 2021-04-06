@@ -1,0 +1,9 @@
+Team Eggs and Bagels (Amelia Chin, Ari Schechter)
+SoftDev
+K19 -- A RESTful Journey Skyward // exploration into REST APIs
+2021-04-05
+
+We started by getting the JSON data to print to a blank webpage
+To do this we opened the url using the urllib library and then read it with the read() comand 
+Then we used the json library's loads() function to open the data in an easily accessible JSON format
+From there all we had to do was access the correct keys and then pass those as variables to our template
