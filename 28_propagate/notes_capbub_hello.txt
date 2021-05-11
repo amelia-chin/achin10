@@ -1,0 +1,26 @@
+// Team Hello -- Dragos Lup - Alvin Wu - Amelia Chin
+// SoftDev pd1
+// K28 -- Bubble Bubble Toil Trouble
+// 2021-05-11
+
+1.) Whenever you click on one of the table entries, it sends you to a pop up where the
+    boxes text is the thing that is listed.
+
+2.) Whenever you click on a table entry, it sends you a pop up for the table entry, table
+    row and the table itself, with the contents of each being listed. The order seems to be
+    entry > row > table, even if you change the order of how these are ran in the code.
+    You can also click solely on the table. We don't think you can click solely on the row.
+
+3.) When you put true at the end of the arguments, it seems to "read" them bottom to top,
+    prioritizing "true" objects over untrue objects. It seems that putting "false" doesn't do
+    anything to the objects either. When you click on the table entry, you get the table first,
+    then the content, then the row. But if we had the row also set to true, we would get,
+    the row second, then the actual content.
+    stopPropagation seems to stop any future runs of that function in the same frame.
+
+4.) We don't know why "true" objects are prioritized over untrue objects. But having them all
+    as true makes it so that it runs "most outside" to "most inside".
+    stopPropagation seems to do the same thing as before, only allowing one pop up to be made.
+
+    After reading about bubbling, stopProbagation stops anything but the first handler to be run.
+    We understood that it was most inside to outside, but we don't know what true actually does.
