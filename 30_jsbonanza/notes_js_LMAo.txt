@@ -1,0 +1,12 @@
+Team LMAo (Maddy Andersen, Amelia Chin, Liam Kronman)
+SoftDev
+K30: JSorcery -- canvas based JS animation
+2021-05-17
+
+- e.preventDefault gave us an error when we used it in the clear function, so we had to comment it out
+- used and explored Math.sin to make the sine wave
+- y = c.height/2 + amp * Math.sin((x + change)/freq);
+    c.height/2 --> middle of the graph from top to bottom is at y = half the canvas height
+    amp --> constant you multiply sine by to get height of the wave
+    Math.sin((x + change)/freq) --> will generate sine of value which is between -1 and 1, determines if the section of the graph will be above or below c.height/2
+- ctx.strokeStyle allows us to set the color of the line
